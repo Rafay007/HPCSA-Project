@@ -7,7 +7,7 @@ CASSANDRA_CONTACT_POINT=$(aws ecs describe-clusters --region $AWS_REGION --clust
 # Set the Docker image and container name
 DOCKER_IMAGE="cassandra:latest"
 DOCKER_CONTAINER_NAME="cassandra-container"
-
+SUSY_DATASET_URL="https://archive.ics.uci.edu/ml/machine-learning-databases/00279/SUSY.csv.gz"
 
 # Set the Docker network name
 DOCKER_NETWORK_NAME="cassandra-network"
