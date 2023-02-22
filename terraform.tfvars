@@ -1,0 +1,8 @@
+region = "eu-central-1"
+instance_type  = "t2.micro"
+ssh_connection_user = "ubuntu"
+ami = "ubuntu/images/hvm-ssd/ubuntu-*-20.04-amd64-server-*"
+vpc_cidr = "178.0.0.0/16"
+public_subnet_cidr = "178.0.10.0/24"
+creds = "~/.aws/credentials"
+tag = "terraform-test"
