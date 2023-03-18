@@ -51,7 +51,7 @@ git clone https://github.com/brianfrankcooper/YCSB.git
 
 
 
-workloads=("workloadd" "workloade" "workloadf")
+workloads=("workloada" "workloadb" "workloadc" "workloadd" "workloade" "workloadf")
 
 repeatrun=3
 records=300000000
