@@ -17,8 +17,8 @@ SUSY_DATASET_URL="https://archive.ics.uci.edu/ml/machine-learning-databases/0027
 DOCKER_NETWORK_NAME="cassandra-network"
 
 # Set the Cassandra keyspace and table name
-CASSANDRA_KEYSPACE="mykeyspace"
-TABLE_NAME="mytable"
+# CASSANDRA_KEYSPACE="mykeyspace"
+# TABLE_NAME="mytable"
 
 
 
@@ -45,6 +45,12 @@ TABLE_NAME="mytable"
 # Run the benchmark on YCSB benchmark framework and dataset
 git clone https://github.com/brianfrankcooper/YCSB.git
 
+
+# Run the below commands in cqlsh shell
+# docker exec $DOCKER_CONTAINER_NAME-1 cqlsh -e "create keyspace ycsb WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor': 3 }; USE ycsb; create table usertable ( y_id varchar primary key, field0 varchar, field1 varchar, field2 varchar, field3 varchar, field4 varchar, field5 varchar, field6 varchar, field7 varchar, field8 varchar, field9 varchar);"
+
+
+
 workloads=("workloadd" "workloade" "workloadf")
 
 repeatrun=3
@@ -67,3 +73,5 @@ do
         #Truncate table and start over
         cqlsh -f cassandra_truncate $hosts
 done
+
+
